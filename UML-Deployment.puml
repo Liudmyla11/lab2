@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+skinparam ArrowFontSize 15
+skinparam ArrowFontColor Black
+skinparam ArrowThickness 2
+skinparam componentStyle uml1
+
+node "Настільний комп'ютер" as Desktop {
+  node "OC Windows / OC Linux" as OS_Desktop {
+    node "Веб-навігатор" as Browser {
+      component [*.js (React/Angular/Vue)]
+    }
+  }
+}
+
+interface Keyboard 
+
+interface Mouse 
+
+  Keyboard -- Desktop
+  Mouse -- Desktop
+
+node "Сервер 1" as Server1 {
+  node "OC Linux" as OS_Server1 {
+    node "Application Server (Node.js / Django / Spring)" as AppServer {
+       component [*.js / API / Business Logic]
+    }
+  }
+}
+
+node "Сервер 2" as Server2 {
+  node "OC Linux" as OS_Server2 {
+    node "Database Server (PostgreSQL / MongoDB)" as DBServer {
+       component (Реляційні таблиці / JSON)
+    }
+  }
+}
+
+Desktop --> Server1 : HTTP / HTTPS\n(Data & Control)
+Server1 --> Server2 : SQL / NoSQL\nQueries (Data Access)
+Server2 --> Server1 : Data\nResponse
+Server1 --> Desktop : Response /\nResults
+@enduml
