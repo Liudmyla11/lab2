@@ -31,7 +31,7 @@ node "Сервер 1" as Server1 {
 node "Сервер 2" as Server2 {
   node "OC Linux" as OS_Server2 {
     node "Database Server (PostgreSQL / MongoDB)" as DBServer {
-       component (Реляційні таблиці / JSON)
+       database (Реляційні таблиці / JSON)
     }
   }
 }
