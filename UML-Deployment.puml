@@ -8,7 +8,7 @@ skinparam componentStyle uml1
 node "Настільний комп'ютер" as Desktop {
   node "OC Windows / OC Linux" as OS_Desktop {
     node "Веб-навігатор" as Browser {
-      component [*.js (React/Angular/Vue)]
+      component [*.js]
     }
   }
 }
@@ -22,7 +22,7 @@ interface Mouse
 
 node "Сервер 1" as Server1 {
   node "OC Linux" as OS_Server1 {
-    node "Application Server (Node.js / Django / Spring)" as AppServer {
+    node "Application Server (Spring)" as AppServer {
        component [*.js / API / Business Logic]
     }
   }
