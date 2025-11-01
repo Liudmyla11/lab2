@@ -23,7 +23,7 @@ interface Mouse
 node "Сервер 1" as Server1 {
   node "ОС Linux " as OS_Server1 {
     node "Application Server (Spring)" as AppServer {
-       component [*.js / API / Business Logic]
+       component [*.java / API / Business Logic]
     }
   }
 }
